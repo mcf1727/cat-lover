@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Lover</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <form action="/generate" method="post" class="container">
+        <div class="input">
+            <label for="tagInput">Tag:</label>
+            <input type="text" id="tagInput" name="tag">
+        </div>
+
+        <div class="input">
+
+            <label for="sayingInput">Saying:</label>
+            <input type="text" id="sayingInput" name="saying">
+        </div>
+
+        <!-- 
+            <label for="tagInput">Format:</label>
+            <input type="button" name="jpeg" value="JPEG"/>
+            <input type="button" name="gif" value="GIF"/> -->
+        <div class="input">
+            <input type="submit" id="generateInput" value="Generate">
+        </div>
+
+    </form>
+
+    <% if (locals.url) { %>
+        <div>
+            <img src="<%= url %>">
+        </div>
+    <% } else { %>
+        <p><%= errorMessage %></p>
+    <% } %>
+
+</body>
+
+</html>
